@@ -33,7 +33,7 @@ Component({
      */
     methods: {
         // 打开隐私协议页面
-        openPrivacyContract() {
+        onOpen() {
             const _ = this
             wx.openPrivacyContract({
                 fail: () => {
@@ -45,14 +45,14 @@ Component({
             })
         },
         // 拒绝隐私协议
-        exitMiniProgram() {
+        onDeny() {
             wx.showToast({
                 title: '必须同意后才可以继续使用当前小程序',
                 icon: 'none'
             })
         },
         // 同意隐私协议
-        handleAgreePrivacyAuthorization() {
+        onAgree() {
             const _ = this
             _.setData({
                 showPrivacy: false
